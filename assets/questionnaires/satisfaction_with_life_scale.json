@@ -1,0 +1,201 @@
+{
+    "name": "Satisfaction with Life Scale",
+    "instructions": "Below are five statements that you may agree or disagree with. Using the 1 - 7 scale below, indicate your agreement with each item by placing the appropriate number on the line preceding that item. Please be open and honest in your responding.",
+    "questions": [
+        {
+            "text": "In most ways my life is close to my ideal.",
+            "answers": [
+                {
+                    "text": "Strongly agree",
+                    "score": 7
+                },
+                {
+                    "text": "Agree",
+                    "score": 6
+                },
+                {
+                    "text": "Slightly agree",
+                    "score": 5
+                },
+                {
+                    "text": "Neither agree nor disagree",
+                    "score": 4
+                },
+                {
+                    "text": "Slightly disagree",
+                    "score": 3
+                },
+                {
+                    "text": "Disagree",
+                    "score": 2
+                },
+                {
+                    "text": "Strongly disagree",
+                    "score": 1
+                }
+            ]
+        },
+        {
+            "text": "The conditions of my life are excellent.",
+            "answers": [
+                {
+                    "text": "Strongly agree",
+                    "score": 7
+                },
+                {
+                    "text": "Agree",
+                    "score": 6
+                },
+                {
+                    "text": "Slightly agree",
+                    "score": 5
+                },
+                {
+                    "text": "Neither agree nor disagree",
+                    "score": 4
+                },
+                {
+                    "text": "Slightly disagree",
+                    "score": 3
+                },
+                {
+                    "text": "Disagree",
+                    "score": 2
+                },
+                {
+                    "text": "Strongly disagree",
+                    "score": 1
+                }
+            ]
+        },
+        {
+            "text": "I am satisfied with my life.",
+            "answers": [
+                {
+                    "text": "Strongly agree",
+                    "score": 7
+                },
+                {
+                    "text": "Agree",
+                    "score": 6
+                },
+                {
+                    "text": "Slightly agree",
+                    "score": 5
+                },
+                {
+                    "text": "Neither agree nor disagree",
+                    "score": 4
+                },
+                {
+                    "text": "Slightly disagree",
+                    "score": 3
+                },
+                {
+                    "text": "Disagree",
+                    "score": 2
+                },
+                {
+                    "text": "Strongly disagree",
+                    "score": 1
+                }
+            ]
+        },
+        {
+            "text": "So far I have gotten the important things I want in life.",
+            "answers": [
+                {
+                    "text": "Strongly agree",
+                    "score": 7
+                },
+                {
+                    "text": "Agree",
+                    "score": 6
+                },
+                {
+                    "text": "Slightly agree",
+                    "score": 5
+                },
+                {
+                    "text": "Neither agree nor disagree",
+                    "score": 4
+                },
+                {
+                    "text": "Slightly disagree",
+                    "score": 3
+                },
+                {
+                    "text": "Disagree",
+                    "score": 2
+                },
+                {
+                    "text": "Strongly disagree",
+                    "score": 1
+                }
+            ]
+        },
+        {
+            "text": "If I could live my life over, I would change almost nothing.",
+            "answers": [
+                {
+                    "text": "Strongly agree",
+                    "score": 7
+                },
+                {
+                    "text": "Agree",
+                    "score": 6
+                },
+                {
+                    "text": "Slightly agree",
+                    "score": 5
+                },
+                {
+                    "text": "Neither agree nor disagree",
+                    "score": 4
+                },
+                {
+                    "text": "Slightly disagree",
+                    "score": 3
+                },
+                {
+                    "text": "Disagree",
+                    "score": 2
+                },
+                {
+                    "text": "Strongly disagree",
+                    "score": 1
+                }
+            ]
+        }
+    ],
+    "interpretations": [
+        {
+            "score": 31,
+            "text": "Extremely satisfied"
+        },
+        {
+            "score": 26,
+            "text": "Satisfied"
+        },
+        {
+            "score": 21,
+            "text": "Slightly satisfied"
+        },
+        {
+            "score": 20,
+            "text": "Neutral"
+        },
+        {
+            "score": 15,
+            "text": "Slightly dissatisfied"
+        },
+        {
+            "score": 10,
+            "text": "Dissatisfied"
+        },
+        {
+            "score": 5,
+            "text": "Extremely dissatisfied"
+        }
+    ]
+}
