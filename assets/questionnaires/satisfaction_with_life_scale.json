@@ -1,6 +1,6 @@
 {
     "name": "Satisfaction with Life Scale",
-    "instructions": "Below are five statements that you may agree or disagree with. Using the 1 - 7 scale below, indicate your agreement with each item by placing the appropriate number on the line preceding that item. Please be open and honest in your responding.",
+    "instructions": "Please indicate your agreement or disagreement with the following statement. Please be open and honest in your responding.",
     "questions": [
         {
             "text": "In most ways my life is close to my ideal.",
