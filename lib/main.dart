@@ -11,13 +11,16 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         appBarTheme: AppBarTheme(
           elevation: 0,
-          color: Color(AppColors.green),
+          color: AppColors.green,
         ),
-        primaryColor: Color(AppColors.green),
+        primaryColor: AppColors.green,
+        accentColor: Colors.white,
         primaryIconTheme: Theme.of(context).primaryIconTheme.copyWith(color: Colors.white),
         primaryTextTheme: TextTheme(
           title: TextStyle(color: Colors.white),
+          body1: TextStyle(color: AppColors.darkgray),
         ),
+        disabledColor: AppColors.lightgray,
       ),
       home: HomeScreen(),
     );
