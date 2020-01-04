@@ -1,10 +1,11 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:grouped_buttons/grouped_buttons.dart';
-import 'package:questionnaires/configs/app_colors.dart';
+import 'package:questionnaires/models/answer.dart';
+import 'package:questionnaires/models/interpretation.dart';
 import 'package:questionnaires/models/question.dart';
 import 'package:questionnaires/models/questionnaire.dart';
-import 'package:questionnaires/screens/home_screen.dart';
+import 'package:questionnaires/screens/result_screen.dart';
 import 'package:questionnaires/widgets/button.dart';
 
 class QuestionnaireScreen extends StatefulWidget {
@@ -25,6 +26,30 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
   bool get userHasAnsweredCurrentQuestion => chosenAnswers[questionIndex] != null;
   String get instructions => widget.questionnaire.instructions;
 
+  String getResultInterpretation() {
+    // calculate user's total score
+    int result = 0;
+    for (int index = 0; index < numberOfQuestions; index++) {
+      Question question = questions[index];
+      int answerIndex = chosenAnswers[index];
+      Answer answer = question.answers[answerIndex];
+      int score = answer.score;
+
+      result += score;
+    }
+
+    // determine interpretation for result
+    List<Interpretation> interpretations = widget.questionnaire.interpretations;
+    for (Interpretation interpretation in interpretations) {
+      if (result >= interpretation.score) {
+        return interpretation.text;
+      }
+    }
+
+    // if something went wrong, return the worst interpretation
+    return interpretations.last.text;
+  }
+
   @override
   void initState() {
     super.initState();
@@ -36,7 +61,6 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).primaryColor,
       appBar: AppBar(
         title: Text(widget.questionnaire.name),
       ),
@@ -59,7 +83,6 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
               Padding(
                 padding: const EdgeInsets.all(15.0),
                 child: Card(
-                  color: Colors.white,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -115,33 +138,12 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
                               visible: questionIndex != 0,
                               child: Button.accent(
                                 buttonLabel: 'Back',
-                                onPressed: () {
-                                  if (questionIndex > 0) {
-                                    setState(() {
-                                      questionIndex--;
-                                    });
-                                  }
-                                },
+                                onPressed: onBackButtonPressed,
                               ),
                             ),
                             Button.primary(
                               buttonLabel: 'Next',
-                              onPressed: userHasAnsweredCurrentQuestion
-                                  ? () {
-                                      if (questionIndex < numberOfQuestions - 1) {
-                                        setState(() {
-                                          questionIndex++;
-                                        });
-                                      } else {
-                                        Navigator.pushReplacement(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) => HomeScreen(),
-                                          ),
-                                        );
-                                      }
-                                    }
-                                  : null,
+                              onPressed: userHasAnsweredCurrentQuestion ? onNextButtonPressed : null,
                             )
                           ],
                         ),
@@ -155,5 +157,31 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
         ),
       ),
     );
+  }
+
+  void onNextButtonPressed() {
+    if (questionIndex < numberOfQuestions - 1) {
+      setState(() {
+        questionIndex++;
+      });
+    } else {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => ResultScreen(
+            questionnaireName: widget.questionnaire.name,
+            interpretation: getResultInterpretation(),
+          ),
+        ),
+      );
+    }
+  }
+
+  void onBackButtonPressed() {
+    if (questionIndex > 0) {
+      setState(() {
+        questionIndex--;
+      });
+    }
   }
 }
