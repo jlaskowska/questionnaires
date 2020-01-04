@@ -32,7 +32,7 @@ class ResultScreen extends StatelessWidget {
                           style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
                         ),
                       ),
-                      Text('Interpretation'),
+                      Text(interpretation),
                       SizedBox(height: 60),
                       Padding(
                         padding: const EdgeInsets.only(bottom: 16.0),

@@ -13,6 +13,8 @@ class MyApp extends StatelessWidget {
           elevation: 0,
           color: AppColors.green,
         ),
+        scaffoldBackgroundColor: AppColors.green,
+        cardColor: Colors.white,
         primaryColor: AppColors.green,
         accentColor: Colors.white,
         primaryIconTheme: Theme.of(context).primaryIconTheme.copyWith(color: Colors.white),
