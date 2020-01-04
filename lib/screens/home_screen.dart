@@ -3,6 +3,7 @@ import 'package:questionnaires/enums/questionnaire_type.dart';
 import 'package:questionnaires/models/questionnaire.dart';
 import 'package:questionnaires/screens/questionnaire_screen.dart';
 import 'package:questionnaires/services/questionnaire_service.dart';
+import 'package:questionnaires/widgets/button.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key key}) : super(key: key);
@@ -56,7 +57,8 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Column(
                 children: <Widget>[
                   for (Questionnaire questionnaire in questionnaires)
-                    RaisedButton(
+                    Button.accent(
+                      buttonLabel: questionnaire.name,
                       onPressed: () => Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) => QuestionnaireScreen(
@@ -64,7 +66,6 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                       ),
-                      child: Text(questionnaire.name),
                     )
                 ],
               ),

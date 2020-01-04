@@ -5,6 +5,7 @@ import 'package:questionnaires/configs/app_colors.dart';
 import 'package:questionnaires/models/question.dart';
 import 'package:questionnaires/models/questionnaire.dart';
 import 'package:questionnaires/screens/home_screen.dart';
+import 'package:questionnaires/widgets/button.dart';
 
 class QuestionnaireScreen extends StatefulWidget {
   final Questionnaire questionnaire;
@@ -112,15 +113,8 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
                           children: <Widget>[
                             Visibility(
                               visible: questionIndex != 0,
-                              child: RaisedButton(
-                                color: Colors.white,
-                                shape: RoundedRectangleBorder(
-                                  side: BorderSide(color: Colors.grey),
-                                ),
-                                child: Text(
-                                  'Back',
-                                  style: TextStyle(fontWeight: FontWeight.w700),
-                                ),
+                              child: Button.accent(
+                                buttonLabel: 'Back',
                                 onPressed: () {
                                   if (questionIndex > 0) {
                                     setState(() {
@@ -130,12 +124,8 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
                                 },
                               ),
                             ),
-                            RaisedButton(
-                              color: Theme.of(context).primaryColor,
-                              child: Text(
-                                'Next',
-                                style: TextStyle(fontWeight: FontWeight.w700, color: Theme.of(context).accentColor),
-                              ),
+                            Button.primary(
+                              buttonLabel: 'Next',
                               onPressed: userHasAnsweredCurrentQuestion
                                   ? () {
                                       if (questionIndex < numberOfQuestions - 1) {
