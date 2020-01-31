@@ -29,11 +29,14 @@ class ResultScreen extends StatelessWidget {
                         child: Text(
                           'Your Result:',
                           textAlign: TextAlign.center,
-                          style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
+                          style: TextStyle(fontSize: 20, fontWeight: FontWeight.normal),
                         ),
                       ),
-                      Text(interpretation),
-                      SizedBox(height: 60),
+                      Text(
+                        interpretation,
+                        style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700),
+                      ),
+                      SizedBox(height: 20),
                       Padding(
                         padding: const EdgeInsets.only(bottom: 16.0),
                         child: Button.primary(

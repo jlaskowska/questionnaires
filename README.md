@@ -1,16 +1,31 @@
 # questionnaires
 
-A Flutter App with psychological questionnaires.
+A Flutter app with psychological questionnaires. Design inspired by [Surveys](https://dribbble.com/shots/3928903-Surveys) by [Shpetim Ujkani](https://dribbble.com/ShpetimUjkani).
 
-## Getting Started
+## Screenshots
 
-This project is a starting point for a Flutter application.
+|                          |                          |                          |
+| -------------------------| ------------------------ | ------------------------ |
+| ![](_screenshots/01.png) | ![](_screenshots/02.png) | ![](_screenshots/03.png) |
 
-A few resources to get you started if this is your first Flutter project:
+## Questionnaires
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+### Satisfaction with Life Scale
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+> A 5-item scale designed to measure global cognitive judgments of one’s life satisfaction (not a measure of either positive or negative affect). Participants indicate how much they agree or disagree with each of the 5 items using a 7-point scale that ranges from 7 strongly agree to 1 strongly disagree.
+
+Diener, E., Emmons, R. A., Larsen, R. J., & Griffin, S. (1985). The Satisfaction with Life Scale. Journal of Personality Assessment, 49, 71-75.
+
+## UML Class Diagram
+
+![](_screenshots/uml_questionnaire.png)
+
+## Technical Info
+
+- There are three screens in the app.
+    - `HomeScreen` contains a button to load the chosen questionnaire.
+    - `QuestionnaireScreen` displays the questionnaire which consists of multiple questions shown one at a time.
+    - `ResultScreen`shows the user's questionnaire result.
+- `setState` is used as the project's state management solution.
+- `QuestionnaireService` loads a list of `Questionnaire` models from json.
+- The code architecture was designed so that a new questionnaire can be incorporated into the app by simply adding an additional json file.
