@@ -4,9 +4,9 @@ A Flutter app with psychological questionnaires. Design inspired by [Surveys](ht
 
 ## Screenshots
 
-|                          |                          |                          |
-| -------------------------| ------------------------ | ------------------------ |
-| ![](_screenshots/01.png) | ![](_screenshots/02.png) | ![](_screenshots/03.png) |
+|                       |                              |                              |                              |
+| ----------------------|------------------------------|------------------------------|----------------------------- |
+| ![](docs/gifs/01.gif) | ![](docs/screenshots/01.png) | ![](docs/screenshots/02.png) | ![](docs/screenshots/03.png) |
 
 ## Questionnaires
 
@@ -18,7 +18,7 @@ Diener, E., Emmons, R. A., Larsen, R. J., & Griffin, S. (1985). The Satisfaction
 
 ## UML Class Diagram
 
-![](_screenshots/uml_questionnaire.png)
+![](docs/diagrams/uml_questionnaire.png)
 
 ## Technical Info
 
